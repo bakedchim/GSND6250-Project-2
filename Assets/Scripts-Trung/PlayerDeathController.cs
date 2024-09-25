@@ -9,8 +9,8 @@ public class PlayerDeathController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if player y position is less than -5, player dies
-        if (transform.position.y < -5)
+        // if player y position is less than -2, player dies
+        if (transform.position.y < -2)
         {
             gameController.LoseGame();
         }

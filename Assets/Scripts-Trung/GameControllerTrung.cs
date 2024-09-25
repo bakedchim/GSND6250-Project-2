@@ -7,10 +7,23 @@ public class GameControllerTrung : MonoBehaviour
     public GameObject gameOverCanvas;
     public GameObject gameWinCanvas;
     
+    private void Start()
+    {
+        // Change cursor lock state
+        Cursor.lockState = CursorLockMode.Locked;
+        // Set the time scale to normal
+        Time.timeScale = 1;
+        // Hide the game over canvas
+        gameOverCanvas.SetActive(false);
+        // Hide the game win canvas
+        gameWinCanvas.SetActive(false);
+    }
     public void WinGame()
     {
         // Set the time scale back to normal
         Time.timeScale = 0;
+        // Change cursor lock state
+        Cursor.lockState = CursorLockMode.None;
         // Show the game win canvas
         gameWinCanvas.SetActive(true);
     }
@@ -19,6 +32,8 @@ public class GameControllerTrung : MonoBehaviour
     {
         // Set the time scale back to normal
         Time.timeScale = 0;
+        // Change cursor lock state
+        Cursor.lockState = CursorLockMode.None;
         // Show the game over canvas
         gameOverCanvas.SetActive(true);
     }
